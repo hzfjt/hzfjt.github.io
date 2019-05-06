@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>采集侠</title>
+	<link href="apps/CaiJiXia/style/cjx.css?2.8" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/dialog.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/cjx.js?2.8"></script>
+</head>
+<body topmargin="8">
+	<table width="98%"  border="0" align="center" cellpadding="3" cellspacing="1">
+		<form name="form1" id="form1" action="###" method="post">
+			<tr> 
+				<td height="20" colspan="2"> <div class="breadcrumbs cl"><div class="lt"><i>采集侠</i>搜索优化设置</div></div> </td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div id="tk" style="display:none;"> 验证正版授权 <span>为什么使用正版：官方正版软件保证网站安全；自动采集更稳定；程序功能更全面；官方提供使用指导；</span></div>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>百度地图：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_bdmap]" value="1" <?php if($kw_bdmap==1) echo 'checked';?>>是
+					<input name="setting[kw_bdmap]" type="radio" value="0" <?php if($kw_bdmap==0) echo 'checked';?>>否
+					<span style="color:#666">（开启后自动在网站根目录生成 <a href="../sitemap.html" target="_blank" class="underline">sitemap.html</a>）</span>
+				</td>
+			</tr> 
+
+			<tr>
+				<td width="200" align="right"><label>谷歌地图：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_ggmap]" value="1" <?php if($kw_ggmap==1) echo 'checked';?>>是
+					<input name="setting[kw_ggmap]" type="radio" value="0" <?php if($kw_ggmap==0) echo 'checked';?>>否
+					<span style="color:#666">（开启后自动在网站根目录生成 <a href="../sitemap.xml" target="_blank" class="underline">sitemap.xml</a>）</span>
+				</td>
+			</tr> 
+
+			<tr>
+				<td width="200" align="right"><label>自动内链：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_autolink]" value="1" <?php if($kw_autolink==1) echo 'checked';?>>是
+					<input name="setting[kw_autolink]" type="radio" value="0" <?php if($kw_autolink==0) echo 'checked';?>>否
+					<span style="color:#666">（推荐开启，对seo十分有利，对权重很有好处）</span>
+				</td>
+			</tr> 
+			<tr>
+				<td width="200" align="right"><label>seo词频率：</label></td>
+				<td>
+					<input name="setting[kw_seocount]" type="text" value="<?php echo $kw_seocount?>">
+					<span style="color:#666">（每篇文章随机插入seo词的数量）</span>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="200" align="right">
+					<label>seo词语或链接：</label>
+				</td>
+				<td>
+					<div class="helptxt">
+						向文章内随机插入以下词语，以获得更高的关键词密度提高排名，支持插入html代码，多个&lsquo;|&rsquo;分开<br>
+						例：<br>
+						<b>西餐厅|最好的西餐厅|自助西餐厅</b><br>
+						也可以是：<br>
+						<b>&#60;a&nbsp;href="http://www.sina.com.cn"&#62;新浪&#60;/a&#62;|&#60;a&nbsp;href="http://www.dedecms.com"&#62;dedecms&#60;/a&#62;</b>
+					</div>
+					<textarea name="setting[kw_seoword]" style="width:720px;" rows="6"><?php echo $kw_seoword?></textarea>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="200" align="right"><label>关键词内链：</label></td>
+				<td>
+					<div class="helptxt">
+						采集回来的文章内包含下列关键词将自动添加链接，最大添加次数在 系统-系统基本参数-其它选项 里设置<br>
+						例：<br>
+						<b>网易|http://www.163.com<br>
+							百度|http://www.baidu.com<br>
+							腾讯|http://www.qq.com</b>
+						</div>
+						<textarea name="setting[kw_relalink]" style="width:720px;" rows="10"><?php echo $kw_relalink?></textarea>
+					</td>
+				</tr>
+				<tr> 
+					<td height="28" colspan="2">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="210">&nbsp;</td>
+								<td><input class="cjxbtn cjxbtnBig cjxbtnGreen" type="submit" border="0" value="保存设置" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</form>
+		</table>
+		<div id="footer" style="text-align:center; padding:10px;"></div>
+	</body>
+	</html>

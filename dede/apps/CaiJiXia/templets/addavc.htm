@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>采集侠</title>
+	<link href="apps/CaiJiXia/style/cjx.css?2.8" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/dialog.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/cjx.js?2.8"></script>
+</head>
+<body topmargin="8">
+	<form method="post">
+		<table width="98%"  border="0" align="center" cellpadding="3" cellspacing="1">
+			<tr> 
+				<td height="20" colspan="2">
+					<div class="breadcrumbs cl"><div class="lt"><i><a href="cjx.php?ac=advcjx">超级采集</a></i>添加采集任务</div></div>
+				</td>
+			</tr>
+			<tr> 
+				<td height="40" colspan="2" bgcolor="#EBEBEB">
+					[规则说明]：&quot;起始无重复HTML[内容]结尾无重复HTML&quot;，如标题规则：&lt;title&gt;[内容]&lt;/title&gt; ，规则可留空，留空则程序自动识别
+				</td>
+			</tr>	
+			<tr> 
+				<td width="200" align="center">采集入口地址</td>
+				<td><input name="siteurl" type="text" style="width:380px;" value="http://"> * </td>
+			</tr>
+			<tr> 
+				<td width="200" align="center">绑定栏目id</td>
+				<td><input name="typeid" type="text" style="width:100px;"></td>
+			</tr>
+			<tr> 
+				<td width="200" align="center">标题规则</td>
+				<td><textarea name="title" style="width:350px; height:60px;"></textarea></td>
+			</tr>
+			<tr> 
+				<td width="200" align="center">作者规则</td>
+				<td><textarea name="writer" style="width:350px; height:60px;"></textarea></td>
+			</tr>
+			<tr> 
+				<td width="200" align="center">来源规则</td>
+				<td><textarea name="source" style="width:350px; height:60px;"></textarea></td>
+			</tr>
+			<tr> 
+				<td width="200" align="center">内容规则</td>
+				<td><textarea name="content" style="width:350px; height:60px;"></textarea> <span style="color:#666;">*</span></td>
+			</tr>
+			<tr> 
+				<td height="28" colspan="2" style="padding-left:210px;">
+					<input name="submit" class="cjxbtn cjxbtnBig cjxbtnGreen" type="submit" value="保存规则">
+					&nbsp; &nbsp; <a href="cjx.php?ac=advcjx">取消返回</a>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div id="footer" style="text-align:center; padding:10px;"></div>
+</body>
+</html>

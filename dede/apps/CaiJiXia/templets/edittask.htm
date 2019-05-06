@@ -1,0 +1,36 @@
+<textarea name="olddata" style="display:none"><?php echo dede_htmlspecialchars($olddata);?></textarea>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<div class="editdxrulelist" style="line-height:25px">
+				<div class="caption cl">
+					<div class="tt"><a href="###" onclick="$('.cjxmenu,.ruletable,.boxtable,.submittable').toggle();$('.boxtable td').html('');">返回</a></div>
+					<span style="float:right;"><a href="http://www.dedeadmin.com/?p=2748" target="_blank" style="color: red; font-weight:bold;">查看设置方法</a></span>
+				</div>
+				目标页面编码: <label><input name="charset" type="radio" value="gb2312" <?php echo $r['charset']=='gb2312'?'checked':''?>>gb2312 </label>
+				<label><input name="charset" type="radio" value="utf-8" <?php echo $r['charset']=='utf-8'?'checked':''?>>utf8</label>
+				<div style="height:5px;line-height:5px;"></div>
+				列表url：<input name="list" type="text" style="width:320px" value="<?php echo dede_htmlspecialchars( $r['list'] ) ?>"> 要采集的栏目列表，通配符[开始数-结束数]，如[1-10] 
+				<div style="height:5px;line-height:5px;"></div>
+				文章url：<input name="page" type="text" style="width:320px" value="<?php echo dede_htmlspecialchars( $r['page'] ) ?>"> 列表内文章地址，支持<u>url模糊匹配(*)</u> 和 <u>区域匹配</u>
+				<div style="height:5px;line-height:5px;"></div>
+				<span style="color:#666">[规则说明]：找出字段内容所在区域，"<span style="background-color:#ccc">起始html片段</span>[内容]<span style="background-color:#ccc">结尾html片段</span>"，如标题规则：&lt;title&gt;[内容]_国内新闻</span>
+				<div style="height:5px;line-height:5px;"></div>
+				<div class="ruleinput">
+					标题规则：<textarea name="titlerule" style="width:360px;height:40px;"><?php echo dede_htmlspecialchars( $r['titlerule'] ) ?></textarea>
+					<div style="height:5px;line-height:5px;"></div>
+					作者规则：<textarea name="authorrule" style="width:360px;height:40px;"><?php echo dede_htmlspecialchars( $r['authorrule'] ) ?></textarea>
+					<div style="height:5px;line-height:5px;"></div>
+					来源规则：<textarea name="sourcerule" style="width:360px;height:40px;"><?php echo dede_htmlspecialchars( $r['sourcerule'] ) ?></textarea>
+					<div style="height:5px;line-height:5px;"></div>
+					内容规则：<textarea name="bodyrule" style="width:360px;height:80px;"><?php echo dede_htmlspecialchars( $r['bodyrule'] ) ?></textarea>
+					<div style="height:5px;line-height:5px;"></div>
+					分页区域：<textarea name="fyrule" style="width:360px;height:40px;"><?php echo dede_htmlspecialchars( $r['fyrule'] ) ?></textarea>
+				</div>
+				<div style="height:5px;line-height:5px;"></div>
+				<input type="button" name="button" value="测试" style="width:60px" onClick="testpage('editdxrulelist');" class="cjxbtn" />
+				<input type="button" name="button" value="提交" style="width:60px" onClick="saveeditpage();" class="cjxbtn" />
+			</div>
+		</td>
+	</tr>
+</table>

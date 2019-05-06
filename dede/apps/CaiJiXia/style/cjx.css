@@ -1,0 +1,86 @@
+body { font-size: 14px; line-height: 1.5; font-family: "microsoft yahei"; color: #333; }
+td { line-height: 2; }
+td label { color: #A4A4A4; display: inline-block; text-align: right; padding-right: 10px; }
+form, h1, h2, h3, ul, ol, div { margin: 0; padding: 0; }
+td, th, div { word-break: break-all; word-wrap: break-word; }
+b, strong { color: #666600; }
+li, dd { list-style-type: none; margin: 0px; padding: 0px; }
+select { padding: 3px; }
+input[type="text"], input[type="password"] { border-width: 1px; border-style: solid; border-color: #707070 #CECECE #CECECE #707070; padding: 2px 4px; height: 18px; line-height: 18px; vertical-align: middle; }
+textarea{ border-width: 1px; border-style: solid; border-color: #707070 #CECECE #CECECE #707070; }
+a:link { color: #000000; text-decoration: none; }
+a:visited { color: #000000; text-decoration: none; }
+a:hover { color: red; }
+a img { border-style: none; }
+b a { color: #666600; }
+strong a { color: #666600; }
+a b { color: #666600; }
+a strong { color: #666600; }
+
+table thead tr td{ border-bottom: 1px solid #e7e7e7; }
+.cl:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.cl { zoom: 1; }
+.breadcrumbs { font-weight: normal; font-size: 22px; margin-right: 18px; vertical-align: middle; line-height: 44px; }
+.breadcrumbs .lt { float: left;  color: #999; font-weight: 300;  }
+.breadcrumbs .lt i { font-style: normal; color: #333;}
+.breadcrumbs .lt i:after { content: "\bb"; display: inline-block; pointer-events: none; margin: 0 3px 0 10px; color: rgba(0,0,0,0); width: 10px; background: url(sp.png) no-repeat center center; }
+.breadcrumbs .rt { float: right; font-size: 12px; }
+.dxrulenote span { border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCC; display: block; }
+.cjxloading { position: absolute; top: 10px; left: 40%; padding: 3px; font-weight: bold; padding-left:40px; background:url(loading.gif) no-repeat left center #FFF;  }
+#nk{background:url(ico_tip.png) no-repeat 10px center #EBEBEB; padding:10px 0 10px 30px; }
+#nk .tiplink{ color:red; }
+#nk .tiplink:hover{ text-decoration: underline; }
+#tk{background:url(ico_true.png) no-repeat 10px center #EBEBEB; padding:10px 0 10px 30px; color:#699F4C; }
+#tk span{ color:#999; font-size:12px; padding-left:50px; }
+.tasklist tr:nth-child(even){ background: #EFEFEF; }
+a.cjxbtn,input.cjxbtn{ height: 22px; line-height: 22px; padding: 0 12px; border: 1px solid #dcdcdc; font-size: 12px;color: #fff;background: #F1F1F1;cursor: pointer;border-radius: 3px;display: inline-block;vertical-align: middle; color: #333; }
+a:hover.cjxbtn,input:hover.cjxbtn{background-position: 0 0px; text-decoration: none; box-shadow:0 1px 2px rgba(0,0,0,0.15); border-color: #999;}
+a.cjxbtnGreen,input.cjxbtnGreen{ color: #FFF; background: #699F4C; border: 1px solid #60a33c; }
+a:hover.cjxbtnGreen,input:hover.cjxbtnGreen{ background: #4a8c26; border: 1px solid #60a33c; }
+a.cjxbtnBig,input.cjxbtnBig{ height: 30px; line-height: 30px; padding: 0 16px; }
+.helptxt{ background: #EBEBEB; padding: 4px; width: 718px; font-size: 12px; line-height: 18px; }
+a.underline{ text-decoration: underline; }
+#timesetting{ border:solid 1px #ededed; width: 98%; margin: 0 auto 20px; }
+#timesetting label{width:60px; text-align: left; padding:0;}
+.autocaiji{ width:98%; margin:0 auto;}
+.autocaiji dl{border-top: solid 1px #ccc; line-height: 30px; display:block; padding-top:20px; }
+.autocaiji dt,.autocaiji td{ float: left; }
+.autocaiji dt{ padding-right: 10px; font-weight: 300; font-size: 20px; }
+.autocaiji .turn{ width: 66px; height: 30px; background: url(turn.png); display: inline-block; cursor: pointer; vertical-align: middle; }
+.autocaiji .turn.on{ background-position: 0px -30px; }
+.autocaiji span{ line-height: 30px; display: inline-block; height: 30px; vertical-align: middle; padding-left: 10px;}
+
+#cjxprogress{ width:98%;margin:0 auto;height:80px;font-size:12px;display:none; }
+#cjxprogress .pgw{height:15px;border:1px solid #898989;text-align:left}
+#cjxprogress #now{width:1%;height:15px;background-color:#829D83}
+#cjxprogress.isawaycj .pgw{ border-color:#F60;}
+#cjxprogress.isawaycj #now{ background-color: #f60;}
+#cjxprogress .caption{ font-size: 20px; font-weight: 300; }
+#cjxprogress .tips{ margin-top: 20px; font-size: 12px; color: #BA4343; }
+
+.cjxlog{ width:98%; margin:0 auto;  }
+.cjxlog fieldset{ border: solid 1px #ccc;}
+.cjxlog fieldset legend{ padding:0 10px;font-weight: 300; font-size: 20px; }
+.cjxlog fieldset .cjxlogbox li{ border-bottom: solid 1px #eee; font-size: 12px; height: 20px; overflow: hidden; }
+.cjxlog fieldset .cjxlogbox .logtime{ display: inline-block; width: 150px; height: 20px; line-height: 20px; overflow: hidden; }
+.cjxlog fieldset .cjxlogbox .logmsg{ display: inline-block; width: 500px; height: 20px; line-height: 20px; overflow: hidden;}
+.cjxlog fieldset .cjxlogbox .lognote{ display: inline-block; height: 20px; line-height: 20px; overflow: hidden;}
+.cjxlog fieldset .cjxlogbox .page{ padding: 5px;}
+.cjxlog fieldset .cjxlogbox .page a{ height: 22px; line-height: 22px; padding: 0 6px; border: 1px solid #dcdcdc; font-size: 12px; color: #fff; background: #F1F1F1; cursor: pointer; border-radius: 3px; display: inline-block; vertical-align: middle; color: #333; margin-right: 6px; }
+.cjxlog fieldset .cjxlogbox .page a:hover,.cjxlog fieldset .cjxlogbox .page a.current{ background-color: #C9C9C9; }
+
+.cjxmenu{ font-size: 16px; border-bottom: solid 2px #eee; height: 30px; }
+.cjxmenu a{ display: block; float: left; height: 30px; line-height: 30px; background-color: #eee; margin-right:3px; padding: 0 8px; border-radius: 2px 2px 0 0; }
+.cjxmenu a.current{ color: #FFF; background-color: #699F4C; }
+.cjxmenu a:hover{ color:#699F4C;}
+.cjxmenu a:hover.current{ color: #FFF; }
+.dxrulelist,.editdxrulelist{ font-size: 14px; line-height: 30px; }
+.dxrulelist .caption,.editdxrulelist .caption{ font-size: 16px; height: 30px; line-height: 30px; }
+.dxrulelist .caption .tt,.editdxrulelist .caption .tt{ float: left; }
+.dxrulelist .caption .tt a,.editdxrulelist .caption .tt a{ color: #f60; padding-left: 33px; background: url(re.jpg) no-repeat left 4px; }
+.dxrulelist .caption .tt a:hover,.editdxrulelist .caption .tt a:hover{ background-position: left -24px;color: #f00; }
+.dxrulelist .caption span,.editdxrulelist .caption span{ font-size: 12px; }
+.dxrulelist textarea,.editdxrulelist textarea{ vertical-align: middle; }
+
+.footertip{ padding:20px 0 0 40px; font-size:12px; background-color: #FFF; padding: 8px 24px; border: 1px solid #E1E6EB;}
+.footertip .caption{ font-size:16px; }

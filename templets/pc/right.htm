@@ -1,0 +1,31 @@
+<div class="sec-side fr">
+<div class="side-hot">
+<div class="s-title">热点<b>MOST POPULAR</b>/</div>
+<ul>
+{dede:arclist row=2 orderby='hot' orderby=pubdate type='image.' imgwidth='230' imgheight='230' titlelen='26'}
+   <li><a href="[field:arcurl/]">[field:image/]
+   <aside>
+   <h3>[field:title/]</h3>
+   <p> 原标题：[field:description function='cn_substr(@me,80)'/]...</p>
+   </aside>
+   </a></li>
+{/dede:arclist}
+</ul>
+</div>
+<div class="side-pick article-pick mt60">
+<div class="s-title">推荐<b>EDITORS' PICK</b>/</div>
+<ul>
+{dede:arclist flag='c,p' titlelen=35 row=3}
+<li>
+<a href="[field:arcurl/]">
+<h6>[field:title/]</h6>
+<p> 原标题：[field:description function='cn_substr(@me,50)'/]...</p>
+<figure>
+<p>
+</figure>
+</a>
+</li>
+{/dede:arclist}
+</ul>
+</div>
+</div>

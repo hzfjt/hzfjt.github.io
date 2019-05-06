@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>采集侠</title>
+	<link href="apps/CaiJiXia/style/cjx.css?2.8" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/dialog.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/cjx.js?2.8"></script>
+	<script type="text/javascript">
+		function sugsubmit(obj){
+			var v = obj.sugget.value;
+			if(v=='') alert("好像您还有有填写内容哦");
+			else
+			{	
+				$.ajax({
+					type: "POST",
+					url: "cjx.php",
+					data: "ac=suggest&v="+v,
+					success: function(data){
+						alert(data);
+						$.dialog.close();
+					}
+				});
+			}
+			return false;
+		}
+	</script>
+</head>
+<body topmargin="8">
+	<table width="98%"  border="0" align="center" cellpadding="3" cellspacing="1">
+		<form name="form1" id="form1" action="###" method="post">
+			<tr>
+				<td height="20" colspan="2"><div class="breadcrumbs cl">
+					<div class="lt"><i>采集侠</i> 基本设置</div>
+				</div></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				</td>
+			</tr>
+
+			<tr>
+				<td width="200" align="right"><label>自动文章自定义属性：</label></td>
+				<td><input name="setting[kw_autof][]" type="checkbox" value="h" <?php if(strpos($kw_autof,'h')!==false) echo 'checked';?>>
+					头条
+					<input name="setting[kw_autof][]" type="checkbox" value="c" <?php if(strpos($kw_autof,'c')!==false) echo 'checked';?>>
+					推荐
+					<input name="setting[kw_autof][]" type="checkbox" value="f" <?php if(strpos($kw_autof,'f')!==false) echo 'checked';?>>
+					幻灯
+					<input name="setting[kw_autof][]" type="checkbox" value="a" <?php if(strpos($kw_autof,'a')!==false) echo 'checked';?>>
+					特荐
+					<input name="setting[kw_autof][]" type="checkbox" value="s" <?php if(strpos($kw_autof,'s')!==false) echo 'checked';?>>
+					滚动
+					<input name="setting[kw_autof][]" type="checkbox" value="b" <?php if(strpos($kw_autof,'b')!==false) echo 'checked';?>>
+					加粗
+					<input name="setting[kw_autof][]" type="checkbox" value="p" <?php if(strpos($kw_autof,'p')!==false) echo 'checked';?>  onClick="this.checked=true;alert('图片属性为必选属性');">
+					图片 <span style="color:#666">（采集回来的文章有机率获得以上所选属性）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>是否下载远程图片：</label></td>
+				<td><input type="radio" name="setting[kw_downpic]" value="1" <?php if($kw_downpic=='1') echo 'checked';?>>
+					下载本地
+					<input name="setting[kw_downpic]" type="radio" value="0" <?php if($kw_downpic=='0') echo 'checked';?>>
+					远程图片
+					<input name="setting[kw_downpic]" type="radio" value="-1" <?php if($kw_downpic=='-1') echo 'checked';?>>
+					过滤图片 <span style="color:#666"></span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>是否生成静态：</label></td>
+				<td><input type="radio" name="setting[kw_ismake]" value="1" <?php if($kw_ismake=='1') echo 'checked';?>>
+					是
+					<input name="setting[kw_ismake]" type="radio" value="0" <?php if($kw_ismake=='0') echo 'checked';?>>
+					否 <span style="color:#666"><?php if($cfg_makeindex=="N"||$cfg_make_andcat=="N"){?>（您还需要到 <a href="sys_info.php"><font color=red>系统配置参数 性能选项</font></a> 开启[发布文章后马上更新]功能 才会自动生成）<?php } ?></span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>是否自动审核：</label></td>
+				<td><input type="radio" name="setting[kw_arcrank]" value="1" <?php if($kw_arcrank=='1') echo 'checked';?>>
+					是
+					<input name="setting[kw_arcrank]" type="radio" value="0" <?php if($kw_arcrank=='0') echo 'checked';?>>
+					否 <span style="color:#666">（如有待审核稿件将先自动审核，审核完后再采集新内容）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>是否采集分页：</label></td>
+				<td><input type="radio" name="setting[kw_fy]" value="1" <?php if($kw_fy=='1') echo 'checked';?>>
+					是
+					<input name="setting[kw_fy]" type="radio" value="0" <?php if($kw_fy=='0') echo 'checked';?>>
+					否 <span style="color:#666">（只影响关键词采集功能）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>采集目标页关键词、描述：</label></td>
+				<td><input type="radio" name="setting[kw_kd]" value="1" <?php if($kw_kd=='1') echo 'checked';?>>
+					是
+					<input name="setting[kw_kd]" type="radio" value="0" <?php if($kw_kd=='0') echo 'checked';?>>
+					否 <span style="color:#666">（选"否"则自动从正文提取前部分内容作为description，提取标题关键词做为keywords）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>自动提取tag：</label></td>
+				<td><input type="radio" name="setting[kw_tag]" value="1" <?php if($kw_tag=='1') echo 'checked';?>>
+					是
+					<input name="setting[kw_tag]" type="radio" value="0" <?php if($kw_tag=='0') echo 'checked';?>>
+					否 
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>每小时总采集（审核）上限：</label></td>
+				<td><input name="setting[kw_maxcount]" type="text" value="<?php echo $kw_maxcount;?>">
+					<span style="color:#666"></span>
+				</td>
+			</tr>
+			<tr>
+				<td height="28" colspan="2">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="210">&nbsp;</td>
+							<td><input class="cjxbtn cjxbtnBig cjxbtnGreen" type="submit" border="0" value="保存设置" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div class="footertip">
+						<div class="caption">采集侠默认开启以下功能</div>
+						自动纠错，自动排版，自动分页，自动去重复，自动提取缩略图<br>
+						自动去重复：采集过的URL不会重复采集，同样标题的文章不会采集入库 
+					</div>
+				</td>
+			</tr>
+		</form>
+	</table>
+	<div id="dialog" style="display:none">
+		<div>将您对采集侠的意见建议提交给我们，如需回复，请留下您的联系方式</div>
+		<div>
+			<form action="index.php?ac=suggets" method="post" onSubmit="return sugsubmit(this)">
+				<textarea name="sugget" rows="8" style="width:300px" id="sugv"></textarea>
+				<div style="height:5px"></div>
+				<input name="submit" type="submit" value=" 提 交 " id="submit">
+			</form>
+		</div>
+	</div>
+	<div id="footer" style="text-align:center; padding:10px;"></div>
+</body>
+</html>

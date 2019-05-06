@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>采集侠</title>
+	<link href="apps/CaiJiXia/style/cjx.css?2.8" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/dialog.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/cjx.js?2.8"></script>
+</head>
+<body topmargin="8">
+	<table width="98%" align="center" cellpadding="3" cellspacing="1">
+		<tr>
+			<td height="20" colspan="4">
+				<div class="breadcrumbs cl"><div class="lt"><i>采集侠</i>超级采集</div></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<div id="tk" style="display:none;"> 验证正版授权 <span>为什么使用正版：官方正版软件保证网站安全；自动采集更稳定；程序功能更全面；官方提供使用指导；</span></div>
+			</td>
+		</tr>
+	</table>
+	<table width="98%" align="center" cellpadding="3" cellspacing="1">
+		<tbody>
+			<tr>
+				<td height="28" colspan="4"><a href="cjx.php?ac=addavc" class="cjxbtn cjxbtnBig cjxbtnGreen">添加任务</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<table width="98%" align="center" cellpadding="3" cellspacing="1">
+		<thead>
+			<tr>
+				<td width="10%" align="center">编号</td>
+				<td width="60%">网站</td>
+				<td width="15%">管理</td>
+				<td width="15%">采集</td>
+			</tr>
+		</thead>
+		<tbody>
+			<?php if(!empty($data)){ foreach($data as $v){ ?>
+			<tr>
+				<td align="center"><?php echo $v['id']?></td>
+				<td><?php echo $v['siteurl']?></td>
+				<td>
+					<a href="?ac=editavc&id=<?php echo $v['id']?>">编辑</a> 
+					<a href="?ac=resetavc&id=<?php echo $v['id']?>" onClick="return confirm('重置采集位置，爬虫将重新开启抓取数据？该操作不会导致采集重复文章，但重新采集需要更多时间')">重置</a> 
+					<a href="?ac=delavc&id=<?php echo $v['id']?>" onClick="return confirm('删除？')">删除</a>
+				</td>
+				<td><a href="javascript:void(0)" onClick="avc(<?php echo $v['id']?>, this);" class="cjxbtn avcbtn">立即采集</a>
+				</td>
+			</tr>
+			<?php } 
+		}else{
+			?>
+			<tr>
+				<td colspan="4" height="180" style="color:#999; text-align:center;">还没有添加采集任务</td>
+			</tr>
+			<?php }	?>
+		</tbody>
+	</table>
+	<div id="cjxprogress">
+	<div style="padding:20px;">
+			<div class="caption">采集进度</div>
+			<div class='pgw'>
+				<div id='now'></div>
+			</div>
+			<span id="go">正在准备采集，请稍等...</span>
+		</div>
+	</div>
+	<table width="98%" align="center" cellpadding="3" cellspacing="1">
+		<tr>
+			<td colspan="4">
+				<div class="footertip" style="margin-top:100px;">
+					<div class="caption">超级采集</div>
+					<div>
+						原理：即以采集爬虫的模式对对方网站进行逐层抓取，获取所有符合规则的内容页面<br/>
+						适用对象：对采集内容没有时间排序要求，需要采集大量内容的网站使用！
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<script id="stainput" data="0"></script>
+	<div id="footer" style="text-align:center; padding:10px;"></div>
+</body>
+</html>

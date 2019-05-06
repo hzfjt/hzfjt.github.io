@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/css/touch-icon-iphone.png">
+<script type="text/javascript" src="/css/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/css/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="/css/jquery.slides.min.js"></script>
+<script type="text/javascript" src="/css/fet.js"></script>
+<script type="text/javascript" src="/css/repos.js"></script>
+<script type="text/javascript">fet.setAlias({IMG_URL:"http://ggg.502432.cn"})</script>
+<script type="text/javascript" src="/css/jquery.cookie.js"></script>
+<script type="text/javascript" src="/css/login.js"></script>
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="/css/html5shiv.min.js"></script>
+	<script type="text/javascript" src="/css/respond.src.js"></script>
+<![endif]-->
+<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<script>$(function() {$('#i-nav').click(function(){$('#i-search-wrap').removeClass('i-search-open');$('#i-nav-wrap').toggleClass('i-nav-open');});$("#i-search").click(function(){$("#i-nav-wrap").removeClass('i-nav-open');$("#i-search-wrap").toggleClass('i-search-open');});$("#l2-nav").click(function(){$(this).toggleClass('l2-nav-open');});$(".ico-weixin").hover(function(){$(".ss-weixin").fadeToggle(300);});$(".ico-weibo").hover(function(){$(".ss-weibo").fadeToggle(300);});});</script>
+<div class="ad_box ad_article_top_banner"></div>
+<div class="breadcrumb">
+{dede:field name='position'/}
+</div>
+<div class="article-container cf">
+<div class="article-wrap">
+<div class="article-main">
+<article>
+<h1 class="article-h1">{dede:field.title/}</h1>
+<time><i class="icon-time"></i> {dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}<span><i class="icon-bell"></i> 来源：{dede:field.source/}</span>
+</time>
+<div class="summary cf">
+<i class="icon-quote-left"></i>
+<p>导读：{dede:field.description function='html2text(@me)'/}</p>
+<i class="icon-quote-right"></i>
+</div>
+<div class="text">
+{dede:field.body/}
+</div>
+</article>
+<div class="article-tags">
+</div>
+<div class="share_dialog"><div class="qr"></div><p>请使用微信"扫一扫"功能扫描</p><a href="" class="close">收起↑↑</a></div>
+<div class="related-articles-list mt60">
+<div class="s-title">相关文章<b>RELATED ARTICLES</b>/</div>
+<ul>
+{dede:arclist row=3 orderby=pubdate type='image.' imgwidth='230' imgheight='230' titlelen='26'}
+   <li><a href="[field:arcurl/]">[field:image/]<h3>[field:title/]</h3></a></li>
+{/dede:arclist}
+</ul>
+</div>
+</div>
+</div>
+<aside class="article-side cf">
+
+<div class="side-slides-wrap">
+<div id="article-side-slides">
+{dede:arclist row=2 orderby=pubdate type='image.' imgwidth='330' imgheight='600'}     
+<div>
+<a href="[field:arcurl/]" target="_blank">
+[field:image/]
+<aside>
+<h2>[field:title/]</h2>
+<p> 原标题：[field:description function='cn_substr(@me,80)'/]...</p>
+</aside>
+</a>
+</div>
+{/dede:arclist}
+</div>
+<div id="slidesjs-log-article-side" class="slidesjs-log"><span class="slidesjs-slide-number"></span>/02</div>
+</div>
+<div class="side-hot article-hot">
+<div class="s-title">热点<b>MOST POPULAR</b>/</div>
+<ul>
+{dede:arclist row=2 orderby='hot' orderby=pubdate type='image.' imgwidth='230' imgheight='230' titlelen='26'}
+   <li><a href="[field:arcurl/]">[field:image/]
+   <aside>
+   <h3>[field:title/]</h3>
+   <p> 原标题：[field:description function='cn_substr(@me,80)'/]...</p>
+   </aside>
+   </a></li>
+{/dede:arclist}
+</ul>
+</div>
+<div class="side-pick article-pick mt60">
+<div class="s-title">推荐<b>EDITORS' PICK</b>/</div>
+<ul>
+{dede:arclist flag='c,p' titlelen=35 row=3}
+<li>
+<a href="[field:arcurl/]">
+<h6>[field:title/]</h6>
+<p> 原标题：[field:description function='cn_substr(@me,50)'/]...</p>
+<figure>
+<p>
+</figure>
+</a>
+</li>
+{/dede:arclist}
+</ul>
+</div>
+<div class="ad_box ad_article_button_1"></div>
+</aside>
+</div>
+{dede:include filename="foot.htm"/}
+<div id="to-top">
+<a href="javascript:;" class="to-top"></a>
+<a href="javascript:;" class="to-nav"></a>
+<nav class="cf">
+{dede:channel type='top' row='10'}
+<a href='[field:typeurl/]' target="_blank">[field:typename/]<br/><b>[field:typeurl/]</b></a>
+{/dede:channel}
+</nav>
+</div>
+<script>$(window).scroll(function() {var dHeight=parseInt($(window).height());var sHeight=parseInt($(window).scrollTop());if(sHeight>(dHeight/2)){var diff =dHeight + sHeight - parseInt($('.footer').offset().top);if(diff >0){$('#to-top').css('bottom',(10+diff));}else{$('#to-top').css('bottom',10);}
+$('#to-top').fadeIn(400);}else{$('#to-top').fadeOut(400);}
+});$(function() {$('#to-top .to-nav').click(function(){$("#to-top nav").fadeToggle(400);});$(".to-top").click(function(){window.scrollTo(0,0);return false;});if(parseInt($(window).width())<1024){$('a[target]').each(function(){$(this).removeAttr('target');});}
+});</script>
+<script>(function(){var bp =document.createElement('script');var curProtocol =window.location.protocol.split(':')[0];if (curProtocol ==='https') {bp.src ='https://zz.bdstatic.com/linksubmit/push.js';}
+else {bp.src ='http://push.zhanzhang.baidu.com/push.js';}
+var s =document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp,s);})();</script>
+<script>$(function() {$('#article-side-slides').slidesjs({width:330 ,height:600,play:{active:true,effect:"slide",interval:9000,auto:true,swap:false,pauseOnHover:false,restartDelay:2500
+},effect:{slide:{speed:1000
+},fade:{speed:1000,crossfade:true
+}
+},navigation:{active:true,effect:"slide"
+},callback:{loaded:function(number) {$('#slidesjs-log-article-side .slidesjs-slide-number').text(number);},start:function(number) {},complete:function(number) {$('#slidesjs-log-article-side .slidesjs-slide-number').text(number);}
+}
+});$('.share_dialog .close').click(function (){$('.share_dialog').slideUp();return false;});$('.qr').qrcode({width:200,height:200,text:window.location.href});$('.share-article .weixin').click(function(){$('.share_dialog').slideToggle();return false;});});var link=$('.nextpage').attr('href');if("undefined" !=typeof link ){$('article img').each(function(){var str ="<a href=\"" + link + "\" title=\"点击查看下一页\"></a>";$(this).wrapAll(str);});}
+</script>
+</body>
+</html>

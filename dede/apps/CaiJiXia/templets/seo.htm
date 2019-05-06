@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>采集侠</title>
+	<link href="apps/CaiJiXia/style/cjx.css?2.8" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/dialog.js?2.8"></script>
+	<script type="text/javascript" src="apps/CaiJiXia/style/cjx.js?2.8"></script>
+</head>
+<body topmargin="8">
+	<table width="98%"  border="0" align="center" cellpadding="3" cellspacing="1">
+		<form name="form1" id="form1" action="###" method="post">
+			<tr> 
+				<td height="20" colspan="2"> 
+					<div class="breadcrumbs cl"><div class="lt"><i>采集侠</i> 伪原创设置</div></div> 
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>伪原创比例：</label></td>
+				<td>
+					<input name="setting[kw_percent]" type="text" value="<?php echo $kw_percent;?>" size="10" maxlength="3">%
+					<span style="color:#666">（0-100，影响本页以下选项，每100篇文章中伪原创的数量）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>自动标题：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_autotitle]" value="1" <?php if($kw_autotitle==1) echo 'checked';?>>是
+					<input name="setting[kw_autotitle]" type="radio" value="0" <?php if($kw_autotitle==0) echo 'checked';?>>否
+					<span style="color:#666">（从正文内提取一段内容做为文章标题，影响文章可读性，利于收录）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>段落重排：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_autopara]" value="1" <?php if($kw_autopara==1) echo 'checked';?>>是
+					<input name="setting[kw_autopara]" type="radio" value="0" <?php if($kw_autopara==0) echo 'checked';?>>否
+					<span style="color:#666">（随机排列正文段落，高级伪原创方式，影响文章可读性，利于收录）</span>
+				</td>
+			</tr>	
+			<tr>
+				<td width="200" align="right"><label>高级混淆：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_autoconfu]" value="1" <?php if($kw_autoconfu==1) echo 'checked';?>>是
+					<input name="setting[kw_autoconfu]" type="radio" value="0" <?php if($kw_autoconfu==0) echo 'checked';?>>否
+					<span style="color:#666">（随机排列正文语句，高级伪原创方式，影响文章可读性，利于收录）</span>
+				</td>
+			</tr>
+
+			<tr>
+				<td width="200" align="right"><label>标题随机插入关键词位置：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_ttis]" value="0" <?php if($kw_ttis==0) echo 'checked';?>>前
+					<input name="setting[kw_ttis]" type="radio" value="1" <?php if($kw_ttis==1) echo 'checked';?>>后
+					<input name="setting[kw_ttis]" type="radio" value="2" <?php if($kw_ttis==2) echo 'checked';?>>随机
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>标题随机插入关键词列表：</label></td>
+				<td>
+					<div class="helptxt">多个关键词用'|'分开，例：<b>最好的采集插件|全自动采集插件</b></div>
+					<textarea name="setting[kw_ttls]" style="width:720px;" rows="5"><?php echo $kw_ttls;?></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>标题同义词替换：</label></td>
+				<td>
+					<input type="radio" name="setting[kw_ttf]" value="1" <?php if($kw_ttf==1) echo 'checked';?>>是
+					<input name="setting[kw_ttf]" type="radio" value="0" <?php if($kw_ttf==0) echo 'checked';?>>否
+					<span style="color:#666">（同义词替换设置是否对标题产生影响）</span>
+				</td>
+			</tr>
+			<tr>
+				<td width="200" align="right"><label>同义词替换：<br>（建议5000以内）</td>
+				<td>
+					<div class="helptxt">每行一对同义词，半角逗号分隔双向替换，→分隔单向替换<br>
+						如：<br>
+						<b>高兴,快乐<br>
+							关心,关怀</b>
+						</div>
+						<textarea name="setting[kw_relaword]" style="width:720px;" rows="20"><?php echo $kw_relaword;?></textarea>
+					</td>
+				</tr>
+
+				<tr> 
+					<td height="28" colspan="2">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="210">&nbsp;</td>
+								<td><input class="cjxbtn cjxbtnBig cjxbtnGreen" type="submit" border="0" value="保存设置" /></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</form>
+		</table>
+		<div id="footer" style="text-align:center; padding:10px;"></div>
+	</body>
+	</html>

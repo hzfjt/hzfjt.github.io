@@ -1,0 +1,7 @@
+.hezuo a {display: inline-block;width:118px;height:40px;line-height:40px;border:1px solid #eee;margin:0 22px 20px 0;float:left;text-align:center;-moz-box-shadow:2px 2px 5px #f1f1f1;-webkit-box-shadow:2px 2px 5px #f1f1f1;box-shadow:2px 2px 5px #f1f1f1;}
+.center {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px; /* 要设定宽度 */}

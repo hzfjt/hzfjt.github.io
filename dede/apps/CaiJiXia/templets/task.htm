@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <title>采集侠</title>
+    <link href="apps/CaiJiXia/style/cjx.css?2.8" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js?2.8"></script>
+    <script type="text/javascript" src="apps/CaiJiXia/style/dialog.js?2.8"></script>
+    <script type="text/javascript" src="apps/CaiJiXia/style/cjx.js?2.8"></script>
+</head>
+<body leftmargin='8' topmargin='8'>
+<div style="height:5px; line-height:5px;"></div>
+<form name="status" action="?ac=status" target="_self" method="post">
+    <input name="type" type="hidden" value="">
+    <table width="98%" border="0" cellpadding="3" cellspacing="1" align="center">
+        <tr>
+            <td height="20">
+                <div class="breadcrumbs cl">
+                    <div class="lt"><i>采集侠</i> 采集任务</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td height="20" bgcolor="#EBEBEB">
+                <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td>
+                            <div style="float:right">
+                                <b><a href="javascript:void(0)" onClick="$.dialog({title:'关键词工具 <b><a href=http://www.dedeadmin.com/?p=1642 target=_blank><font color=red>选取建议</font></a></b>',content:'http://www.dedeapps.com/?m=keyword&type=iframe',width:'100%',height:'100%'});"><font color="red">关键词工具</font></a></b>
+                                <a href="?ac=testhttp">[环境测试]</a>
+                                &nbsp;&nbsp;
+                            </div>
+                            <strong>&nbsp;采集任务：(仅支持 普通文章 模型的栏目)</strong>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="98%" border="0" cellpadding="3" cellspacing="1" align="center">
+        <thead>
+        <tr align="center">
+            <td width="8%">选择</td>
+            <td width="12%" align="left">栏目名称</td>
+            <td width="10%">是否开启</td>
+            <td width="60%">采集目标 【<a href="?ac=clearall" onClick="return confirm('你确定要清空所有栏目采集项目吗');" style="text-decoration:underline;">清空</a>】</td>
+            <td width="10%">每小时最多采集</td>
+        </tr>
+        </thead>
+        <tbody class="tasklist">
+        <?php
+				if(empty($kwtype))
+				{
+					?>
+        <tr align="center"><td colspan="6" height="200"><b><font color="red"> 无法找到 文章模型 的栏目，请您先<a href="catalog_add.php?listtype=all">添加栏目</a></font></b></td></tr>
+        <?php
+				} else foreach($kwtype as $id => $typename) {
+        ?>
+        <tr align="center">
+            <td align="center"><input name="tid[]" value="<?php echo $kwtype[$id]['id']?>" type="checkbox"></td>
+            <td align="left"><a href="../plus/list.php?tid=<?php echo $kwtype[$id]['id']?>" target="_blank"><?php echo $kwtype[$id]['typename']?></a>[ID:<?php echo $kwtype[$id]['id']?>]</td>
+            <td>
+                <?php
+							if(!empty($kwtype[$id]['keyword'])){
+								?>
+                <a href="?ac=status&type=<?php echo $kwtype[$id]['close']?>&tid=<?php echo $kwtype[$id]['id']?>"><strong><?php echo $kwtype[$id]['close']==1?'<font color=red>已关闭</font>':'已开启';?></strong></a>
+                <?php
+							} else {
+								?>
+                无关键词
+                <?php
+							}
+							?>
+            </td>
+            <td align="left">关键词：<?php echo $kwtype[$id]['keyword']?>
+                <a href="javascript:void(0)" onClick="Showdialog(<?php echo $kwtype[$id]['id']?>,<?php echo $kwtype[$id]['close']?>);"><b>[设置]</b></a>
+                <a href="?ac=export&id=<?php echo $kwtype[$id]['id']?>" target="_blank"><b>[导出]</b></a>
+                <a href="?ac=import&id=<?php echo $kwtype[$id]['id']?>"><b>[导入]</b></a>
+
+            </td>
+            <td><input name="tmax[<?php echo $kwtype[$id]['id']?>]" type="text" style="width:30px; text-align:center" value="<?php echo isset($tmax[$kwtype[$id]['id']])?$tmax[$kwtype[$id]['id']]:100; ?>"></td>
+        </tr>
+        <?php
+				}
+				?>
+        </tbody>
+        <tbody>
+        <tr>
+            <td height="24" colspan="6">
+                <table width="98%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td>
+                            <input name="updatemax" type="submit" id="updatemax" style="float:right;" value="更新数量限制" class="cjxbtn" />
+                            <a href="javascript:void(0)" class="cjxbtn" onClick='selall();' >全选</a>
+                            <a href="javascript:void(0)" class="cjxbtn" onClick="noselall();" >取消</a>
+                            <a href="javascript:void(0)" class="cjxbtn" onClick="closeall();">关闭</a>
+                            <a href="javascript:void(0)" class="cjxbtn" onClick="openall();">开启</a>
+                            <a href="javascript:void(0)" class="cjxbtn" onClick="coone();">测试单个栏目</a>
+                            <script type="text/javascript">
+                                function selall(){
+                                    $("input[name='tid\[\]']").attr('checked','checked');
+                                }
+                                function noselall(){
+                                    $("input[name='tid\[\]']").attr('checked',false);
+                                }
+                                function closeall(){
+                                    $("input[name='type']").val(0);
+                                    $('form[name=\'status\']').submit();
+                                }
+                                function openall(){
+                                    $("input[name='type']").val(1);
+                                    $('form[name=\'status\']').submit();
+                                }
+                                function coone(){
+                                    var d = [];
+                                    $("input[name='tid\[\]']:checked").each(function(){
+                                        d.push($(this).val());
+                                    });
+                                    if(d.length==0){
+                                        $.dialog({title:null,content:"请您先选择要测试的栏目！",time:2000});
+                                        return false;
+                                    }
+                                    if(d.length>1){
+                                        $.dialog({title:null,content:"一次只能选择一个栏目！",time:2000});
+                                        return false;
+                                    }
+                                    if(d.length==1) statask(d[0]);
+                                }
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="50px" colspan="6">
+                <a href="javascript:void(0)" onClick="statask(0);" class='cjxbtn cjxbtnBig cjxbtnGreen' id="stainput" data="0"> 采集测试 </a>
+                &nbsp;
+                <a href="?ac=delhash" onClick="return confirm('采集侠采集过的网址不会再采集，如果大量删除了文章又想重新采集，可以使用该功能，清除历史记录需要重新抓取采集过的url，会降低采集效率，您确定要清除吗？')">[清除历史记录]</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<div id="cjxprogress">
+    <div class='pgw'>
+        <div id='now'></div>
+    </div>
+    <span id="go">正在准备采集，请稍等...</span>
+    <div class="tips">测试采集为循环采集，循环检测所有采集规则内的网址，每次工作会继续上次采集工作，而全自动后台采集不会对已采集过的网址重复下载。</div>
+</div>
+<div class="autocaiji">
+    <dl class="cl" id="switch">
+        <dt>全自动采集开关：</dt>
+        <dd>
+            <div class="turn " id="auto_cj" onclick="auto_cj()"></div>
+            <input type="hidden" id="auto_flag" value="<?php echo $automatic?>" />
+            <span><a href="javascript:void(0)" onclick="$('#timesetting').toggle();$('#_desc').toggle();">[高级设置<img src="apps/CaiJiXia/style/file_tt.gif" align="absmiddle" />]</a></span>
+        </dd>
+    </dl>
+</div>
+
+<div class="_desc" id="_desc" style="display: none;">
+    <div>使用说明，在页脚模板内添加标签 <br/>
+        {dede:robot copyright="qjpemail"/} <br/>
+        如果是默认模板即修改 /templets/default/footer.htm， 当您的网站有用户访问时才会触发采集</div>
+</div>
+
+<div id="timesetting" style="display:none;">
+    <form action="?ac=cron" method="post">
+        <table width="98%" border="0" cellpadding="3" cellspacing="1" align="center">
+            <tr>
+                <td height="20" colspan="3">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td><strong>&nbsp;自动采集时间段</strong>（采集上限请在 <a href="?ac=setting" style="text-decoration:underline;">基本设置</a> 里设置）</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td width="7%" colspan="3">
+                    <div style="padding:10px">
+                        <?php for($i=0;$i<=23;$i++){ ?>
+                        <label><input name="cron[<?php echo $i ?>]" type="checkbox" value="<?php echo $i ?>" <?php echo isset($cron[$i])?'checked':'';?>><?php echo $i ?>点</label>
+                        <?php if($i==11) echo "<br>" ?>
+                        <?php } ?>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td height="24" colspan="3">
+                    <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td align="left" style="padding-left:10px;">
+                                <input type="submit" value="保存设置" class="cjxbtn cjxbtnBig">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div class="cjxlog">
+    <fieldset>
+        <legend>采集记录</legend>
+        <div class="c cl cjxlogbox">
+        </div>
+    </fieldset>
+</div>
+<style>
+    ._desc{
+        border: solid 1px #ededed;
+        width: 98%;
+        margin: 0 auto 20px;
+    }
+</style>
+<script>
+
+    if($("#timesetting input[type=checkbox]:checked").length==0){
+        $("#timesetting input[type=checkbox]").each(function(){
+            $(this).attr("checked", true);
+        })
+    }
+
+    var auto_flag = $("#auto_flag").val();
+    if(auto_flag == 1){
+        $("#auto_cj").attr("class", "turn on");
+    }else{
+        $("#auto_cj").attr("class", "turn");
+    }
+    function auto_cj(){
+        $.ajax({
+            type: 'get',
+            url: '?ac=saveautocj' ,
+            success: function(data){
+                auto_flag = $("#auto_flag").val();
+                if(auto_flag){
+                    if(auto_flag == 1){
+                        $("#auto_flag").val(99);
+                        $("#auto_cj").attr("class", "turn");
+                    }else{
+                        $("#auto_flag").val(1);
+                        $("#auto_cj").attr("class", "turn on");
+                    }
+                }else{
+                    $("#auto_flag").val(99);
+                    $("#auto_cj").attr("class", "turn");
+                }
+            }
+        });
+    }
+</script>
+
+<div id="footer" style="text-align:center; padding:10px;"></div>
+</body>
+</html>

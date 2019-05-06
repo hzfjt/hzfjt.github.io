@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<TITLE>{dede:global.cfg_webname/}</TITLE>
+<meta name="keywords" content="{dede:global.cfg_keywords/}">
+<meta name="description" content="{dede:global.cfg_description/}">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/css/touch-icon-iphone.png">
+<script type="text/javascript" src="/css/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/css/jquery.slides.min.js"></script>
+<script type="text/javascript" src="/css/jquery.cookie.js"></script>
+<script type="text/javascript" src="/css/login.js"></script>
+<script type="text/javascript" src="/css/index.base.js"></script>
+<script type="text/javascript" src="/css/jquery.lazyload.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<script>$(function() {$('#i-nav').click(function(){$('#i-search-wrap').removeClass('i-search-open');$('#i-nav-wrap').toggleClass('i-nav-open');});$("#i-search").click(function(){$("#i-nav-wrap").removeClass('i-nav-open');$("#i-search-wrap").toggleClass('i-search-open');});$("#l2-nav").click(function(){$(this).toggleClass('l2-nav-open');});$(".ico-weixin").hover(function(){$(".ss-weixin").fadeToggle(300);});$(".ico-weibo").hover(function(){$(".ss-weibo").fadeToggle(300);});});</script>
+<div class="bannerArea">
+<div class="w1180">
+<ul class="list">
+{dede:arclist row=6 sort='hot' orderby=pubdate type='image.' imgwidth='1180' imgheight='550'}
+<li class="here">
+<a href="beauty/skincare/20180510452.html" target="_blank">
+<img class='lazy' src="[field:picname/]" alt="[field:title/]" width="1180" height="550">
+<div class="desc">
+<div class="t">[field:title/]</div>
+<p> 原标题：[field:description function='cn_substr(@me,80)'/]</p>
+</div>
+</a>
+</li>
+{/dede:arclist}
+</ul>
+<div class="leftCover"></div>
+<div class="rightCover"></div>
+<a href="javascript:void(0);" class="prev"></a>
+<a href="javascript:void(0);" class="next"></a>
+<div class="bannerNum ftArial"><span class="focus">1</span><span class="total"></span></div>
+</div>
+</div>
+<script type='text/javascript' src='css/index_banner.js'></script>
+<div class="main-wrapper w1180">
+<div class='todayFocus'>
+<h2 class='cateTitle'><span class="tit-txt">Today's Focus</span></h2>
+<div class='todayArea'>
+<div class='partA fLeft'>
+<dl class='list'>
+<dd> 
+<!--最新文档-->
+    {dede:arclist row=5 titlelen=32 noflag='h'}
+    <a href="[field:arcurl/]" title="[field:title/]" class="s here" target="_blank"><span>[field:title/]</span></a>
+    {/dede:arclist}
+<!--//最新文档-->
+</dd>
+<dt>
+{dede:arclist row=5 titlelen=32 flag='h,p'}
+<a href="[field:arcurl/]" title="[field:title/]" target="_blank">
+<img class='lazy' src="[field:picname/]" alt="[field:title/]" width="570" height="490">
+</a>
+{/dede:arclist}
+</dt>
+<dt class="time ftyahei">
+<script type="text/javascript">FestivalDay.show();</script>
+</dt>
+</dl>
+</div>
+<div class='partB fRight ad h490'>
+<a href="" title="学会抵抗饥饿，让减肥更轻松！" target="_blank">
+<img class='lazy' src="http://photocdn.sohu.com/20151029/mp38573539_1446106033269_2_th_fv23.jpeg" width="320">
+</a>
+</div>
+</div>
+</div>
+<div class="favourite">
+<div class="model_title">
+<h2><span class="tit-txt">特别推荐</span></h2>
+<div class="channel clearfix">
+<span class="sp1">
+</span>
+<span class="cur">特别推荐</span>
+<span class="sp2">
+</span>
+</div>
+</div>
+<div class='area'>
+<ul class='list'>
+{dede:arclist flag='a' row='10' orderby='pubdate'}
+<li class="style_show">
+<a href="[field:arcurl/]" target='_blank'>
+<img class='lazy' src="[field:picname/]" alt="[field:title/]" width="366" height="300">
+<div class='txt'><span>[field:title/]</span></div>
+</a>
+</li>
+{/dede:arclist}
+</ul>
+<div class='boutiqueColumn'>
+<div class='title'><span class='lineC'></span><h3><span>精彩栏目</span></h3></div>
+<div class='box'>
+<div class='fashionWord fLeft'>
+<div class='t ftArial'>new tag</div>
+<ul class='listA'>
+</ul>
+</div>
+<div class='beautyWord fRight'>
+<div class='t ftArial'>hot tag</div>
+<ul class='listA'>
+</ul>
+</div>
+<span class='line'></span>
+</div>
+</div>
+</div>
+<div class='changeBtArea'><a href='javascript:;' title='换一组'>换一组</a></div>
+</div>
+<div class="fashion">
+<div class="model_title">
+<h2><span class="tit-txt">时尚前沿</span></h2>
+<div class="channel clearfix">
+<span class="sp1">
+<a href="fashion/style/index.htm" target="_blank">时装</a>
+<a href="fashion/street_look/index.htm" target="_blank">前沿</a>
+</span>
+<span class="cur">时尚前沿</span>
+<span class="sp2">
+<a href="yimei/toutiao/index.htm" target="_blank">头条</a>
+<a href="yimei/yanjiusuo/index.htm" target="_blank">颜究所</a>
+</span>
+</div>
+</div>
+<div class='fashionArea'>
+<div class='partA fLeft'>
+<div class='scrollBox'>
+<ul>
+<li>
+<a href="fashion/street_look/20180416161.html" title="为什么刘涛越活越美？一白遮千丑" target='_blank'>
+<img class='lazy' src="http://img.mp.itc.cn/upload/20170321/cac86349c209479eba80995091c3fcb2_th.jpg" width='820' height='480' alt='为什么刘涛越活越美？一白遮千丑'>
+<div class='txt'>
+<div class='t'>为什么刘涛越活越美？一白遮千丑</div>
+<div class='desc'> 原标题：为什么刘涛越活越美？一白遮千丑说的就是她 刘涛——不被生活打败的女人 刘</div>
+</div>
+</a>
+</li>
+<li>
+<a href="fashion/street_look/20180416159.html" title="娱乐圈刮起刘亦菲的仙女风，选对" target='_blank'>
+<img class='lazy' src="http://img.mp.itc.cn/upload/20170322/3285bfd88e6145efa7d38d1c87d3d17a_th.jpg" width='820' height='480' alt='娱乐圈刮起刘亦菲的仙女风，选对'>
+<div class='txt'>
+<div class='t'>娱乐圈刮起刘亦菲的仙女风，选对</div>
+<div class='desc'> 原标题：娱乐圈刮起刘亦菲的仙女风，选对眉形美成仙 美肤说：最近网上开启了路人抓拍</div>
+</div>
+</a>
+</li>
+<li>
+<a href="fashion/street_look/20180416158.html" title="美成小仙女并不难，百元以内就能" target='_blank'>
+<img class='lazy' src="http://img.mp.itc.cn/upload/20170322/e5264833926341d0b97bde2f4a29b5ba_th.jpg" width='820' height='480' alt='美成小仙女并不难，百元以内就能'>
+<div class='txt'>
+<div class='t'>美成小仙女并不难，百元以内就能</div>
+<div class='desc'> 原标题：美成小仙女并不难，百元以内就能拥有完美裸妆！ 美肤说： 斩男最强利器当属</div>
+</div>
+</a>
+</li>
+<li>
+<a href="fashion/street_look/20180416157.html" title="倪妮的极简穿搭，教你怎么靠气质" target='_blank'>
+<img class='lazy' src="http://img.mp.itc.cn/upload/20170322/99bd259aba904aeebcd4f29ca030def2_th.jpg" width='820' height='480' alt='倪妮的极简穿搭，教你怎么靠气质'>
+<div class='txt'>
+<div class='t'>倪妮的极简穿搭，教你怎么靠气质</div>
+<div class='desc'> 原标题：倪妮的极简穿搭，教你怎么靠气质穿出时尚感 倪妮有种骨子里透出来优雅气质，</div>
+</div>
+</a>
+</li>
+</ul>
+<a href='javascript:void(0);' class='prev'></a>
+<a href='javascript:void(0);' class='next'></a>
+<div class='changeNum'></div>
+</div>
+</div>
+<div class='partB fRight'>
+<div class='topList'>
+<h3 class='t'>top 榜单</h3>
+<ul> <li><a href="fashion/style/20180510451.html" title="即使汤唯已经39岁了，穿起小白裙依" target="_blank">即使汤唯已经39岁了，穿起小白裙依</a></li>
+<li><a href="fashion/style/20180510450.html" title="夏天穿透视装？这个女神40年前就玩" target="_blank">夏天穿透视装？这个女神40年前就玩</a></li>
+<li><a href="lifestyle/wedding/20180427449.html" title="99%的女人，最容易在婚姻里犯这两" target="_blank">99%的女人，最容易在婚姻里犯这两</a></li>
+<li><a href="lifestyle/wedding/20180427448.html" title="韩式婚纱照：完美诠释清新浪漫之美" target="_blank">韩式婚纱照：完美诠释清新浪漫之美</a></li>
+<li><a href="lifestyle/wedding/20180427447.html" title="真的看哭了：给你两个老公，你选哪" target="_blank">真的看哭了：给你两个老公，你选哪</a></li>
+<li><a href="lifestyle/wedding/20180427446.html" title="大马路上拍婚纱照，看一对新人的嬉" target="_blank">大马路上拍婚纱照，看一对新人的嬉</a></li>
+</ul>
+</div>
+<div class='ad ad_320x100'>
+<img class='lazy' src="http://img.mp.itc.cn/upload/20170404/510148a8f81e471a98a8ed768aa9a63f_th.jpeg" height='100' width='320' alt='你知道吗？同时做两个医美项目比'>
+</div>
+</div>
+</div>
+<div class='fashionAreaA'>
+<div class='partA fLeft'><a href="fashion/jewelry/20180416127.html" title="你卸对妆了吗？皮肤越来越差的原" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170803/79a1bd3e25cd4082aebea036edac7000.gif" height='280' width='390' alt='你卸对妆了吗？皮肤越来越差的原'>
+<div class='txt'>
+<span>你卸对妆了吗？皮肤越来越差的原</span>
+</div>
+</a>
+<a href="fashion/jewelry/20180416125.html" title="三生三世桃花妆，你们爱的桃花色" target="_blank">
+<img class='lazy' src="http://img.mp.sohu.com/upload/20170806/752419d8ae2f41459db3ac43fccb4503_th.png" height='280' width='390' alt='三生三世桃花妆，你们爱的桃花色'>
+<div class='txt'>
+<span>三生三世桃花妆，你们爱的桃花色</span>
+</div>
+</a>
+</div>
+<div class='partB fRight'>
+<div class='scrollBox'>
+<ul><li><a href="fashion/watch/20180416101.html" title="不明白为什么有人会用牙膏涂脸来" target="_blank"><img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180206/7439062794934824b21344025182499b.jpeg" width='320' height='280' border='0'></a><p><a href='fashion/watch/20180416101.html' target='_blank'>不明白为什么有人会用牙膏涂脸来</a></p></li>
+<li><a href="fashion/watch/20180416100.html" title="想要皮肤好，给你的身体做次大保" target="_blank"><img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180207/271eabb33e6c4e068ccdc546224c8000.jpeg" width='320' height='280' border='0'></a><p><a href='fashion/watch/20180416100.html' target='_blank'>想要皮肤好，给你的身体做次大保</a></p></li>
+</ul>
+<div class='changeNum'></div>
+</div>
+</div>
+</div>
+<div class='fashionAreaB'>
+<div class='partA fLeft'>
+<div class="title"><span class="lineC"></span><h3><span>最夯单品</span></h3></div>
+<ul class='list ad'><li>
+<a href="beauty/skincare/20180510452.html" title="肌肤总闹小情绪？肌底维稳了解一" target="_blank">
+<img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180510/8e144081b52b48f3ad5bf2c0fc5c9da4.jpeg' height='226' width='226' alt='肌肤总闹小情绪？肌底维稳了解一'>
+<div class='txt'>
+<div class='n'>肌肤总闹小情绪？肌底维稳了解一</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/skincare/2018041639.html" title="护肤排毒很重要，脸上几种状况告" target="_blank">
+<img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180208/bc46e94353db440a9dabcf574a2622f4.jpeg' height='226' width='226' alt='护肤排毒很重要，脸上几种状况告'>
+<div class='txt'>
+<div class='n'>护肤排毒很重要，脸上几种状况告</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/skincare/2018041638.html" title="女人最不能胖的4个身体部位，瘦" target="_blank">
+<img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180209/6875a087aef047d3b5be723e4cb3e586.jpeg' height='226' width='226' alt='女人最不能胖的4个身体部位，瘦'>
+<div class='txt'>
+<div class='n'>女人最不能胖的4个身体部位，瘦</div>
+</div>
+</a>
+</li>
+</ul>
+</div>
+<div class='partB fRight'><a href="beauty/skincare/20180510452.html" title="肌肤总闹小情绪？肌底维稳了解一" target="_blank"><img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180510/8e144081b52b48f3ad5bf2c0fc5c9da4.jpeg' width='320' height='354' alt='肌肤总闹小情绪？肌底维稳了解一'></a>
+</div>
+</div>
+</div>
+<div class="luxury">
+<div class="model_title">
+<h2><span class="tit-txt">珠宝腕表</span></h2>
+<div class="channel clearfix">
+<span class="sp1">
+<a href="fashion/jewelry/index.htm" target="_blank">珠宝</a>
+<a href="/fashion/accessory/" target="_blank">配饰</a>
+</span>
+<span class="cur">珠宝腕表</span>
+<span class="sp2">
+<a href='#' target='_blank'>蝴蝶结</a> <a href='#' target='_blank'>高级定制</a>
+</span>
+</div>
+</div>
+<div class='luxuryAreaA mt30'>
+<div class='partA fLeft'>
+<div class='scrollBox'>
+<ul>
+<li>
+<a href="beauty/skincare/20180510452.html" title="肌肤总闹小情绪？肌底维稳了解一" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180510/8e144081b52b48f3ad5bf2c0fc5c9da4.jpeg" width='820' height='480' alt='肌肤总闹小情绪？肌底维稳了解一'>
+<div class='txt'>
+<div class='t'>肌肤总闹小情绪？肌底维稳了解一</div>
+<div class='desc'> 原标题：肌肤总闹小情绪？肌底维稳了解一下 有没有发现，现在皮肤“ 虚不受补 ”的人</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427242.html" title="不同性格的人士应如何选择发型颜" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180224/34f1168a605249e7a745aca00ba01ae3.gif" width='820' height='480' alt='不同性格的人士应如何选择发型颜'>
+<div class='txt'>
+<div class='t'>不同性格的人士应如何选择发型颜</div>
+<div class='desc'> 原标题：不同性格的人士应如何选择发型颜色？ 每种色系都内含金属色彩情感，色彩能将</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427241.html" title="短发有毒，剪了就会爱上~" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180225/8c2c9252b2214cc7ba147e73d53ae1f3.jpeg" width='820' height='480' alt='短发有毒，剪了就会爱上~'>
+<div class='txt'>
+<div class='t'>短发有毒，剪了就会爱上~</div>
+<div class='desc'> 原标题：短发有毒，剪了就会爱上~ 短发有毒 剪了你会爱上它~ 当下流行的短发参考 想</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427240.html" title="为何现在很多理发师只会推荐两边" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180227/09647ebd5607436abbf0994e5b7b4333.jpeg" width='820' height='480' alt='为何现在很多理发师只会推荐两边'>
+<div class='txt'>
+<div class='t'>为何现在很多理发师只会推荐两边</div>
+<div class='desc'> 原标题：为何现在很多理发师只会推荐两边铲短？ 每次想换一个发型，想改变一下自己的</div>
+</div>
+</a>
+</li>
+</ul>
+<a href='javascript:void(0);' class='prev'></a>
+<a href='javascript:void(0);' class='next'></a>
+<div class='changeNum'></div>
+</div>
+</div>
+<div class='partB fRight'>
+<div class='cateT'>
+<div class='line'></div>
+<h3>浪漫婚嫁</h3>
+<div class='txt ftArial'>
+<span>BRIDAL</span>
+</div>
+</div>
+<div class='pic'><a href="/a/20171226/38232.html" title="肌肤总闹小情绪？肌底维稳了解一" target='_blank'><img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180510/8e144081b52b48f3ad5bf2c0fc5c9da4.jpeg" alt='肌肤总闹小情绪？肌底维稳了解一' width='320'><div class='desc'><span>肌肤总闹小情绪？肌底维稳了解一</span></div></a>
+</div>
+</div>
+</div>
+<div class='luxuryAreaB mt40'>
+<div class='fLeft partA'>
+<ul class='list'><li>
+<div class='t'><div class='lineA'></div><div class='h'><span>美妆</span></div></div>
+<a href="beauty/makeup/20180427207.html" title="手残党也能3秒画好眼妆，林允亲" target='_blank'>
+<img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180424/046619f6727f48579a36c5b40649f13e.jpeg' width='220' height='250' alt='手残党也能3秒画好眼妆，林允亲'>
+<div class='txt'><span>手残党也能3秒画好眼妆，林允亲</span></div>
+</a>
+<div class='line'></div>
+</li>
+<li>
+<div class='t'><div class='lineA'></div><div class='h'><span>美妆</span></div></div>
+<a href="beauty/makeup/20180427206.html" title="卸妆水的正确使用方法，你用对了" target='_blank'>
+<img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180425/23e3521e841d4748aba864a07f9cd4ef.jpeg' width='220' height='250' alt='卸妆水的正确使用方法，你用对了'>
+<div class='txt'><span>卸妆水的正确使用方法，你用对了</span></div>
+</a>
+<div class='line'></div>
+</li>
+<li>
+<div class='t'><div class='lineA'></div><div class='h'><span>美妆</span></div></div>
+<a href="beauty/makeup/20180427205.html" title="怎样化妆才能不伤害皮肤 满满的" target='_blank'>
+<img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180425/3ae0e70c8e4a4c579e46514dd5fe60c0.jpeg' width='220' height='250' alt='怎样化妆才能不伤害皮肤 满满的'>
+<div class='txt'><span>怎样化妆才能不伤害皮肤 满满的</span></div>
+</a>
+<div class='line'></div>
+</li>
+</ul>
+</div>
+<div class='fRight partB'>
+<div class='ad_320x294'><a href="beauty/skincare/20180510452.html" title="肌肤总闹小情绪？肌底维稳了解一" target='_blank'><img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180510/8e144081b52b48f3ad5bf2c0fc5c9da4.jpeg' width='320' height='294'></a>
+</div>
+</div>
+</div>
+</div>
+<div class="beauty">
+<div class="model_title">
+<h2><span class="tit-txt">美容美体</span></h2>
+<div class="channel clearfix">
+<span class="sp1">
+<a href="beauty/skincare/index.htm" target="_blank">护肤</a>
+<a href="beauty/makeup/index.htm" target="_blank">美妆</a>
+</span>
+<span class="cur">美容美体</span>
+<span class="sp2">
+<a href="/beauty/fragrance/" target="_blank">香水</a>
+<a href="beauty/hairstyle/index.htm" target="_blank">发型</a>
+</span>
+</div>
+</div>
+<div class='beautyAreaA mt30'>
+<div class='partA fLeft'>
+<div class='scrollBox'>
+<ul> <li>
+<a href="beauty/goods/20180427225.html" title="3秒就能画好眼影？这个3天售罄的" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180420/c139db3ed05b4b9281bcbc95d0ad8519.jpeg" width='820' height='480' alt='3秒就能画好眼影？这个3天售罄的'>
+<div class='txt'>
+<div class='t'>3秒就能画好眼影？这个3天售罄的</div>
+<div class='desc'> 原标题：3秒就能画好眼影？这个3天售罄的小众品牌简直666！ 作为网瘾少女加彩妆控桃</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/goods/20180427224.html" title="这款已经C位出道的国货气垫你用" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180421/628340c60108405e9cfbdb781e61cd1f.jpeg" width='820' height='480' alt='这款已经C位出道的国货气垫你用'>
+<div class='txt'>
+<div class='t'>这款已经C位出道的国货气垫你用</div>
+<div class='desc'> 原标题：这款已经C位出道的国货气垫你用过了吗？ style美妆 关注 Hey~ 小S和你们又见</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/goods/20180427223.html" title="我今儿的妆，还没你一根口红贵，" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180422/94ffa2a7a0fb488998910655c7d2c439.gif" width='820' height='480' alt='我今儿的妆，还没你一根口红贵，'>
+<div class='txt'>
+<div class='t'>我今儿的妆，还没你一根口红贵，</div>
+<div class='desc'> 原标题：我今儿的妆，还没你一根口红贵，羡慕吧？ 4月对于O姐而言，是最适合“吃土”</div>
+</div>
+</a>
+</li>
+<li>
+<a href="beauty/goods/20180427222.html" title="科普bb霜与粉底有什么区别 避免" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180423/5ba316df04d84bbeb6041438ffa36cc1.jpeg" width='820' height='480' alt='科普bb霜与粉底有什么区别 避免'>
+<div class='txt'>
+<div class='t'>科普bb霜与粉底有什么区别 避免</div>
+<div class='desc'> 原标题：科普bb霜与粉底有什么区别 避免选错彩妆产品 说到bb霜与粉底，相信我们大家</div>
+</div>
+</a>
+</li>
+</ul>
+<a href='javascript:void(0);' class='prev'></a>
+<a href='javascript:void(0);' class='next'></a>
+<div class='changeNum'></div>
+</div>
+</div>
+<div class='partB fRight'>
+<div class='weekWatch'>
+<a href="beauty/skincare/20180510452.html" title="肌肤总闹小情绪？肌底维稳了解一" target='_blank'>
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180510/8e144081b52b48f3ad5bf2c0fc5c9da4.jpeg" alt='肌肤总闹小情绪？肌底维稳了解一' width='320' height='480'>
+<div class='cover'></div>
+<div class='txt'>
+<div class='t'>
+<span class='lineA'></span><span class='lineB'></span>一周看点
+</div>
+<div class='n'>肌肤总闹小情绪？肌底维稳了解一</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class='beautyAreaB mt40'>
+<div class='partA fLeft'>
+<ul class='listA'><li>
+<a href="beauty/hairstyle/20180427242.html" title="不同性格的人士应如何选择发型颜" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180224/34f1168a605249e7a745aca00ba01ae3.gif" alt='不同性格的人士应如何选择发型颜' width="246" height="246">
+<div class="txt"><span>不同性格的人士应如何选择发型颜</span></div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427241.html" title="短发有毒，剪了就会爱上~" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180225/8c2c9252b2214cc7ba147e73d53ae1f3.jpeg" alt='短发有毒，剪了就会爱上~' width="246" height="246">
+<div class="txt"><span>短发有毒，剪了就会爱上~</span></div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427240.html" title="为何现在很多理发师只会推荐两边" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180227/09647ebd5607436abbf0994e5b7b4333.jpeg" alt='为何现在很多理发师只会推荐两边' width="246" height="246">
+<div class="txt"><span>为何现在很多理发师只会推荐两边</span></div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427239.html" title="发型影响相貌，女明星换发型如换" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180412/9c345d7a0507482d8fa54791e51bc9bd.jpeg" alt='发型影响相貌，女明星换发型如换' width="246" height="246">
+<div class="txt"><span>发型影响相貌，女明星换发型如换</span></div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427238.html" title="今年流行什么发型 2018流行发型" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180223/bd05cbc3c49d4585b89f3ea9c104b7a3.jpeg" alt='今年流行什么发型 2018流行发型' width="246" height="246">
+<div class="txt"><span>今年流行什么发型 2018流行发型</span></div>
+</a>
+</li>
+<li>
+<a href="beauty/hairstyle/20180427237.html" title="发型｜2018什么星座的美女发型最" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180211/1d4fd19f7a5d45a593deb24532e5cee3.jpg" alt='发型｜2018什么星座的美女发型最' width="246" height="246">
+<div class="txt"><span>发型｜2018什么星座的美女发型最</span></div>
+</a>
+</li>
+</ul>
+</div>
+<div class='partB fRight'>
+<dl class='listB'><dt>
+<a href="yimei/toutiao/20180427181.html" title="36岁的张韶涵，为什么还有逆天的" target="_blank"><img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180426/d4609c5bd65e4077a6e952ccaede3383.jpeg' width='320'></a>
+</dt>
+<dd>
+<div>
+<a href="yimei/toutiao/20180427181.html" title="36岁的张韶涵，为什么还有逆天的" target="_blank">36岁的张韶涵，为什么还有逆天的</a>
+</div>
+<div>
+<a href="yimei/toutiao/20180427181.html" target="_blank"> 原标题：36岁的张韶涵，为什么还有逆天的少女感？ 小</a>
+</div>
+</dd>
+<dt>
+<a href="yimei/toutiao/2018041657.html" title="像娜扎和热巴这样画眼妆，你也能" target="_blank"><img class='lazy' src='http://5b0988e595225.cdn.sohucs.com/images/20180123/0b4b7422bcc9427a9aa5264dee401bb0.jpg' width='320'></a>
+</dt>
+<dd>
+<div>
+<a href="yimei/toutiao/2018041657.html" title="像娜扎和热巴这样画眼妆，你也能" target="_blank">像娜扎和热巴这样画眼妆，你也能</a>
+</div>
+<div>
+<a href="yimei/toutiao/2018041657.html" target="_blank"> 原标题：像娜扎和热巴这样画眼妆，你也能美的很高级~</a>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="lifestyle">
+<div class="model_title">
+<h2><span class="tit-txt">快乐生活</span></h2>
+<div class="channel clearfix">
+<span class="sp1">
+<a href="lifestyle/travel/index.htm" target="_blank">旅行</a>
+<a href="lifestyle/health/index.htm" target="_blank">健康</a>
+<a href="/lifestyle/love/" target="_blank">情感</a>
+</span>
+<span class="cur">快乐生活</span>
+<span class="sp2">
+<a href="lifestyle/deco/index.htm" target="_blank">家居</a>
+<a href="lifestyle/wedding/index.htm" target="_blank">婚嫁</a>
+<a href="lifestyle/food/index.htm" target="_blank">美食</a>
+</span>
+</div>
+</div>
+<div class='lifeStyleArea'>
+<div class='lifeStyleScroll fLeft'>
+<ul><li>
+<a href="lifestyle/wedding/20180427449.html" title="99%的女人，最容易在婚姻里犯这" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170804/61f9264afc444904bd606c3559aa7b11.gif" alt='99%的女人，最容易在婚姻里犯这' width='480' height='480'>
+<div class='t'><div class='tBg'></div><span>99%的女人，最容易在婚姻里犯这</span></div>
+</a>
+</li>
+<li>
+<a href="lifestyle/wedding/20180427448.html" title="韩式婚纱照：完美诠释清新浪漫之" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170809/3edcda76e4ea4fd69573bf49f18ba9b8.jpeg" alt='韩式婚纱照：完美诠释清新浪漫之' width='480' height='480'>
+<div class='t'><div class='tBg'></div><span>韩式婚纱照：完美诠释清新浪漫之</span></div>
+</a>
+</li>
+<li>
+<a href="lifestyle/wedding/20180427447.html" title="真的看哭了：给你两个老公，你选" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170809/440a240a49b646598aed2aade430fcea.gif" alt='真的看哭了：给你两个老公，你选' width='480' height='480'>
+<div class='t'><div class='tBg'></div><span>真的看哭了：给你两个老公，你选</span></div>
+</a>
+</li>
+<li>
+<a href="lifestyle/wedding/20180427446.html" title="大马路上拍婚纱照，看一对新人的" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170810/fc4c60222a61459993e2f60a1804d49f.jpeg" alt='大马路上拍婚纱照，看一对新人的' width='480' height='480'>
+<div class='t'><div class='tBg'></div><span>大马路上拍婚纱照，看一对新人的</span></div>
+</a>
+</li>
+<li>
+<a href="lifestyle/wedding/20180427445.html" title="看一次哭一次，婚礼上一定要拍的" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170810/4c0e04a81514442a98d6e2741efc335e.png" alt='看一次哭一次，婚礼上一定要拍的' width='480' height='480'>
+<div class='t'><div class='tBg'></div><span>看一次哭一次，婚礼上一定要拍的</span></div>
+</a>
+</li>
+<li>
+<a href="lifestyle/wedding/20180427444.html" title="婚纱照故事：两人能够在一起，哪" target="_blank">
+<img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20170908/1f8e94f1f35043c5970f2ba6851eba5d.jpeg" alt='婚纱照故事：两人能够在一起，哪' width='480' height='480'>
+<div class='t'><div class='tBg'></div><span>婚纱照故事：两人能够在一起，哪</span></div>
+</a>
+</li>
+</ul>
+<div class="prev"></div>
+<div class="next"></div>
+</div>
+<div class='partB fRight'>
+<ul class='lifeList'><li>
+<a href="lifestyle/travel/20180416134.html" title="女生弄这种发型也太好看了吧！长" class="i" target="_blank"><img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180131/d0835bcc21014218a4c433cbc192ada5.jpeg" alt="女生弄这种发型也太好看了吧！长"></a>
+<div class="txt">
+<a href="lifestyle/travel/20180416134.html" title="女生弄这种发型也太好看了吧！长" target="_blank">
+<div class="nt">女生弄这种发型也太好看了吧！长</div>
+<p> 原标题：女生弄这种发型也太好看了吧！长发短发都适合！ 很多时</p>
+</a>
+</div>
+</li>
+<li>
+<a href="lifestyle/travel/20180416132.html" title="少女感爆棚的卷发，比直发好看N" class="i" target="_blank"><img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180201/5240b9ad889943c3b2369c5aefd9e29b.jpeg" alt="少女感爆棚的卷发，比直发好看N"></a>
+<div class="txt">
+<a href="lifestyle/travel/20180416132.html" title="少女感爆棚的卷发，比直发好看N" target="_blank">
+<div class="nt">少女感爆棚的卷发，比直发好看N</div>
+<p> 原标题：少女感爆棚的卷发，比直发好看N倍，适合所有脸型！ 今</p>
+</a>
+</div>
+</li>
+<li>
+<a href="lifestyle/travel/20180416129.html" title="欧美风VS温柔风，你的发型选对了" class="i" target="_blank"><img class='lazy' src="http://5b0988e595225.cdn.sohucs.com/images/20180202/e855bb56cb324c798d6db15b1f253bcf.jpeg" alt="欧美风VS温柔风，你的发型选对了"></a>
+<div class="txt">
+<a href="lifestyle/travel/20180416129.html" title="欧美风VS温柔风，你的发型选对了" target="_blank">
+<div class="nt">欧美风VS温柔风，你的发型选对了</div>
+<p> 原标题：欧美风VS温柔风，你的发型选对了吗？ 最近欧美风和温柔</p>
+</a>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper">
+<div>
+<dl class="friend-link w1180">
+<dt class="index-link" onmouseover='$("#index-link").show();$(".index-link").css("color","#000");$("#index-tag").hide();$(".index-tag").css("color","#666");'>友情链接</dt>
+<dt class="index-tag" onmouseover='$("#index-link").hide();$(".index-tag").css("color","#000");$("#index-tag").show();$(".index-link").css("color","#666");'>时尚标签</dt>
+<dd id="index-link">
+<a href='http://www.meizhuangjie.com.cn' target='_blank'>美妆街</a>
+<a href='http://www.meizhuangxiu.cn' target='_blank'>美妆秀</a>
+<a href='http://www.whiten.com.cn' target='_blank'>中国美白网</a>
+<a href='http://www.beautytop.com.cn' target='_blank'>第一美容网</a>
+<a href='http://www.loling.com.cn' target='_blank'>中国化妆品新闻网</a>
+<a href='http://www.xineee.com' target='_blank'>中国美容网</a>
+<a href='http://www.xineee.net' target='_blank'>中华美容网</a>
+<a href='http://www.xineee.com.cn' target='_blank'>中华美容在线</a>
+<a href='http://www.yulu360.com' target='_blank'>中国整形美容网</a>
+<a href='http://www.ixinwei.com.cn' target='_blank'>中国护肤网</a>
+<a href='http://www.ixiumei.com.cn' target='_blank'>爱秀女性网</a>
+<a href='http://www.mshishang.com.cn' target='_blank'>美容时尚网</a>
+<a href='http://www.meifajie.com.cn' target='_blank'>中国美容美发网</a>
+<a href='http://www.yimeiv.com' target='_blank'>中国医学美容网</a>
+<a href='http://www.eastmode.cn' target='_blank'>东方时尚网</a>
+<a href='http://www.fadnews.cn' target='_blank'>新华时尚网</a>
+<a href='http://www.intfad.com' target='_blank'>国际时尚网</a>
+</dd>
+<dd style="display:none;" id="index-tag">
+</dd>
+</dl>
+<div class="bot-nav">
+<a href="about/index.html" rel="nofollow" target="_blank">关于我们</a>
+<a href="about/tougao.html" rel="nofollow" target="_blank">投稿指南</a>
+<a href="about/ads.html" rel="nofollow" target="_blank">广告合作</a>
+<a href="about/links.html" rel="nofollow" target="_blank">合作媒体</a>
+<a href="about/privacy.html" rel="nofollow" target="_blank">隐私声明</a>
+<a href="about/terms.html" rel="nofollow" target="_blank">使用条款</a>
+<a href="about/contact.html" rel="nofollow" target="_blank">联系我们</a>
+</div>
+<div class="record">
+<div class="record-txt"><p>Copyright &copy; 2011 - <script type="text/javascript">document.write(new Date().getFullYear())</script> xineee.com Inc. All Rights Reserved. &nbsp;内容合作QQ：1735106309<br><span><a><img class="icp" src="/css/beian.png">苏公网安备 32010602000222号</a> - <a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow">苏ICP备11024303号</a></span></p></div>
+</div>
+</div>
+</div>
+<div id="to-top">
+<a href="javascript:;" class="to-top"></a>
+<a href="javascript:;" class="to-nav"></a>
+<nav class="cf">
+{dede:channel type='top' row='10'}
+<a href='[field:typeurl/]' target="_blank">[field:typename/]<br/><b>[field:typeurl/]</b></a>
+{/dede:channel}
+</nav>
+</div>
+<script>$(window).scroll(function() {var dHeight=parseInt($(window).height());var sHeight=parseInt($(window).scrollTop());if(sHeight>(dHeight/2)){var diff =dHeight + sHeight - parseInt($('.footer-wrapper').offset().top);if(diff >0){$('#to-top').css('bottom',(10+diff));}else{$('#to-top').css('bottom',10);}
+$('#to-top').fadeIn(400);}else{$('#to-top').fadeOut(400);}
+});$(function() {$('#to-top .to-nav').click(function(){$("#to-top nav").fadeToggle(400);});$(".to-top").click(function(){window.scrollTo(0,0);return false;});if(parseInt($(window).width())<1024){$('a[target]').each(function(){$(this).removeAttr('target');});}
+});</script>
+<script type="text/javascript" src="/css/tinyscrollbar.js"></script>
+<script type="text/javascript" src="/css/waypoints.js"></script>
+<script type="text/javascript" src="/css/jquery.scroll.plugin.js"></script>
+</body>
+</html>

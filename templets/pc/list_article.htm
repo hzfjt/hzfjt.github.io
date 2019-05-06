@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<link rel="stylesheet" type="text/css" href="/css/global.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="/css/html5shiv.min.js"></script>
+	<script type="text/javascript" src="/css/respond.src.js"></script>
+<![endif]-->
+<script type="text/javascript" src="/css/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/css/jquery.slides.min.js"></script>
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/css/touch-icon-iphone.png">
+<script type="text/javascript" src="/css/jquery.cookie.js"></script>
+<script type="text/javascript" src="/css/login.js"></script>
+<script type="text/javascript" src="/css/jquery.lazyload.min.js"></script>
+<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body>
+{dede:include filename="head.htm"/}
+<script>$(function() {$('#i-nav').click(function(){$('#i-search-wrap').removeClass('i-search-open');$('#i-nav-wrap').toggleClass('i-nav-open');});$("#i-search").click(function(){$("#i-nav-wrap").removeClass('i-nav-open');$("#i-search-wrap").toggleClass('i-search-open');});$("#l2-nav").click(function(){$(this).toggleClass('l2-nav-open');});$(".ico-weixin").hover(function(){$(".ss-weixin").fadeToggle(300);});$(".ico-weibo").hover(function(){$(".ss-weibo").fadeToggle(300);});});</script>
+<div class="l2-nav">
+<header>美妆<b>SKINCARE</b></header>
+<nav id="l2-nav">
+<ul>
+<li><span> 全部 <b>ALL</b></span></li>
+{dede:channel type='top' row='10'}
+<li><a href='[field:typeurl/]' target="_blank">[field:typename/]<b>[field:typeurl/]</b></a></li>
+{/dede:channel}
+</ul>
+<i></i>
+</nav>
+</div>
+<div class="breadcrumb">
+{dede:field name='position'/}
+</div>
+<div class="sec-container mt40 cf">
+<div class="sec-main fl">
+{dede:list pagesize='10' titlelen=42}
+<section class="sec-list-item cf">
+<div class="sec-mod mod-w4x">
+<a href='[field:arcurl/]' target='_blank'><img class='lazy' src='[field:litpic/]' alt='[field:title/]'></a>
+</div>
+<div class="cont">
+<h2><a href="[field:arcurl/]" class="title">[field:title/]</a></h2>
+<p> 原标题：[field:description function='cn_substr(@me,150)'/]...</p>
+<footer><i class="icon-time"></i>[field:pubdate function="GetDateTimeMK(@me)"/] <span> </span></footer>
+</div>
+</section>
+{/dede:list}
+<div class="list-page"> 
+{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+</div>
+</div>
+{dede:include filename="right.htm"/}
+</div>
+{dede:include filename="foot.htm"/}
+<div id="to-top">
+<a href="javascript:;" class="to-top"></a>
+<a href="javascript:;" class="to-nav"></a>
+<nav class="cf">
+{dede:channel type='top' row='10'}
+<a href='[field:typeurl/]' target="_blank">[field:typename/]<br/><b>[field:typeurl/]</b></a>
+{/dede:channel}
+</nav>
+</div>
+<script>$(window).scroll(function() {var dHeight=parseInt($(window).height());var sHeight=parseInt($(window).scrollTop());if(sHeight>(dHeight/2)){var diff =dHeight + sHeight - parseInt($('.footer').offset().top);if(diff >0){$('#to-top').css('bottom',(10+diff));}else{$('#to-top').css('bottom',10);}
+$('#to-top').fadeIn(400);}else{$('#to-top').fadeOut(400);}
+});$(function() {$('#to-top .to-nav').click(function(){$("#to-top nav").fadeToggle(400);});$(".to-top").click(function(){window.scrollTo(0,0);return false;});if(parseInt($(window).width())<1024){$('a[target]').each(function(){$(this).removeAttr('target');});}
+});</script>
+<script>$(function() {$('#sec-main-slides').slidesjs({width:800 ,height:400,play:{active:true,effect:"fade",interval:9000,auto:true,swap:false,pauseOnHover:false,restartDelay:1500
+},effect:{slide:{speed:200
+},fade:{speed:1000,crossfade:true
+}
+},navigation:{active:true,effect:"fade"
+},callback:{loaded:function(number) {$('#slidesjs-log-sec-main .slidesjs-slide-number').text(number);},start:function(number) {},complete:function(number) {$('#slidesjs-log-sec-main .slidesjs-slide-number').text(number);}
+}
+});$('#gallery-side-slides').slidesjs({width:330 ,height:525,play:{active:true,effect:"slide",interval:9000,auto:true,swap:false,pauseOnHover:true,restartDelay:9000
+},effect:{slide:{speed:800
+},fade:{speed:1000,crossfade:true
+}
+},navigation:{active:true,effect:"slide"
+},callback:{loaded:function(number) {$('#slidesjs-log-gallery-side .slidesjs-slide-number').text(number);},start:function(number) {},complete:function(number) {$('#slidesjs-log-gallery-side .slidesjs-slide-number').text(number);}
+}
+});if($('#atp_1779').html()){$('.sec-main-slides-wrap .slidesjs-slide').eq(0).empty().append($('#atp_1779').children());}
+});</script>
+</body>
+</html>

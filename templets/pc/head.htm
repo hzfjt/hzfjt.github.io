@@ -1,0 +1,72 @@
+<header class="top-header">
+    <section>
+        <a href="/" class="logo"><img src="/css/logo.png"></a>
+    </section>
+    <nav>
+        <ul>
+		
+		{dede:channelartlist typeid='top'}
+        <li>
+                <dl class="nav-fashion ">
+                    <dt><a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}<b>{dede:field name='seotitle'/}</b></a></dt>
+                    <dd>{dede:channel type='son' noself='yes'}<a href="[field:typelink/]">[field:typename/]</a>{/dede:channel}</dd>
+                </dl>
+        </li>
+		{/dede:channelartlist}
+        </ul>
+    </nav>
+    <div class="ss-icon">
+        <span class="ico-weixin"></span>
+        <span class="ico-weibo"></span>
+        <span class="ico-search"></span>
+        <span class="ico-sign"></span>
+    </div>
+    <div class="ss-wrap search-wrap">
+        <i class="caret-up"></i>
+        <form method="get" target="_blank" action="/search.php" accept-charset="UTF-8">
+            <input type="text" class="in-txt" placeholder="" name="q"><a href="#" class="btn">搜 索</a>
+        </form>
+		<form  name="formsearch" action="{dede:global.cfg_cmsurl/}/plus/search.php">
+        <div class="form">
+          <h4>搜索</h4>
+           <input type="hidden" name="kwtype" value="0" />
+           <input name="q" type="text" class="search-keyword" id="search-keyword" value="在这里搜索..." onfocus="if(this.value=='在这里搜索...'){this.value='';}"  onblur="if(this.value==''){this.value='在这里搜索...';}" />
+          <input type="text" class="in-txt" placeholder="" name="q"><a href="#" class="btn">搜 索</a>
+        </div>
+        </form>
+    </div>
+    <div class="ss-wrap sign-wrap">
+        <i class="caret-up"></i>
+        <form action="" method="POST">
+            <input type="hidden" name="redurl" value="">
+            <input type="hidden" name="ul_type" value="00">
+            <input type="text" name="userName" class="in-txt" placeholder="用户名">
+            <input type="password" name="password" class="in-txt" placeholder="密码">
+            <a href="#" class="btn">登 录</a>
+            <div style="display:none"><input type="submit"></div>
+        </form>
+        <div class="mt20 cf">
+            <a href="#" target="_blank" class="fr">注册新用户</a>
+        </div>
+    </div>
+    <div class="ss-weixin"></div>
+    <div class="ss-weibo"></div>
+    <span id="i-nav"></span>
+    <span id="i-search"></span>
+    <div class="top-nav-wrap" id="top-nav">
+        <nav class="top-nav" id="i-nav-wrap">
+            <ul>
+			{dede:channel type='top' row='10'}
+      	        <li><a href='[field:typeurl/]' target="_blank">[field:typename/]<b>[field.seotitle /]</b></a></li>
+      	    {/dede:channel}
+            </ul>
+        </nav>
+        <nav class="top-nav" id="i-search-wrap">
+            <div>
+                <form method="get" action="/search.php" accept-charset="UTF-8">
+                    <input type="text" name="q" placeholder="搜索">
+                </form>
+            </div>
+        </nav>
+    </div>
+</header>
